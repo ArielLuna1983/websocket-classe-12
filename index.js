@@ -65,6 +65,7 @@ app.post('/chat', async (req, res) =>{
   let chatter = await chatting()
   const { author, message } = req.body;
   const newChat = {
+    time: Date(),
     author,
     message
   };

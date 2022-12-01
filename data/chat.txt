@@ -6,5 +6,10 @@
   {
     "author": "bot@bot",
     "message": "hola"
+  },
+  {
+    "time": "Thu Dec 01 2022 17:21:55 GMT-0300 (hora estándar de Argentina)",
+    "author": "bot@bot",
+    "message": "123456"
   }
 ]
