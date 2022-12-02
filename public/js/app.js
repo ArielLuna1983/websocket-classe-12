@@ -11,12 +11,13 @@ socket.on('products', async tabla => {
     document.getElementById('table').innerHTML = mapping
 });
 
-socket.on('conversation', async chat =>{
+socket.on('conversation', async chat => {
     console.log(("chat", await chat));
     let chatBox = chat.map(e => {
-        return `<div>
-        <div class="message"><span class="author">${author}</span>:${message}</div>
-        </div>`
+        return `
+        <span class="autor">${e.author}:</span>
+        <span class="time">${e.time}
+        <span class="mensaje">:${e.message}</span><br>`
     }).join('')
     document.getElementById('conversacion').innerHTML = chatBox
 })

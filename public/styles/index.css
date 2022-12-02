@@ -19,3 +19,14 @@ input .boton{
   margin-right: 1mm;
   margin-left: 100%;
 }
+.autor{
+  color: blue !important;
+  font-weight: bolder !important;
+}
+.mensaje{
+  color: green !important;
+  font-style: italic;
+}
+.time{
+  color: saddlebrown !important;
+}

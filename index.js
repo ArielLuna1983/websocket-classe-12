@@ -15,7 +15,7 @@ app.use(express.static('public'));
 io.on('connection', async socket => {
   console.log('socket id', socket.id);
   socket.emit('products', await getAll())
-  socket.emit('conversation', chatting())
+  socket.emit('conversation', await chatting())
   //socket.on('new-message', entry())
 })
 
@@ -61,11 +61,18 @@ app.post('/', async (req, res) => {
   res.redirect('/')
 });
 
+
 app.post('/chat', async (req, res) =>{
   let chatter = await chatting()
+  let time = new Date()
+  let mes = time.getMonth() +1 
+  let dia = time.getDate().toString()
+  if (dia.length == 1) dia = "0" + dia
+  let temp = dia + "/"+ mes.toString() + "/" + time.getFullYear().toString() + " " +  time.getHours().toString() + ":" + time.getMinutes().toString() + ":" + time.getSeconds().toString()
+  console.log(temp);
   const { author, message } = req.body;
   const newChat = {
-    time: Date(),
+    time: temp,
     author,
     message
   };
